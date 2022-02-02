@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/not-found-view.16d8b8ac.chunk.js","mappings":"8LAAe,SAASA,IACpB,OAAO","sources":["views/NoteFound/NoteFound.jsx"],"sourcesContent":["export default function NoteFound() {\r\n    return <h1> Page not found</h1>\r\n}"],"names":["NoteFound"],"sourceRoot":""}
