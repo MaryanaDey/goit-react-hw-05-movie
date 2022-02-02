@@ -17,8 +17,20 @@ export default function Navigation() {
               Home
             </NavLink>
           </NavListItem>
+          <NavListItem>
+            <NavLink
+              to="/movies"
+              style={({ isActive }) => ({
+                color: isActive ? '#dc6300' : '#2a363b',
+                textDecoration: isActive ? 'underline' : 'none',
+              })}
+            >
+              Movies
+            </NavLink>
+          </NavListItem>
         </NavList>
       </Nav>
+      <Outlet />
     </>
   );
 }
