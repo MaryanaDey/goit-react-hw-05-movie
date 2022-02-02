@@ -1,6 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+import Navigation from './components/Navigation/Navigation';
 
 const Home = lazy(() => import('./routes/Home/Home' /* webpackChunkName: "home-view" */));
 const NotFound = lazy(() =>
@@ -13,6 +14,7 @@ const Movies = lazy(() =>
 export default function App() {
   return (
     <Suspense fallback={<h1>Loading...</h1>}>
+      <Navigation />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/movies" element={<Movies />}></Route>
