@@ -14,26 +14,35 @@ import {
 
 export default function FilmDataCard({ film, genres }) {
   const location = useLocation();
+  console.log(location);
+
   return (
     <>
       <FilmCard>
-        <Poster />
+        <Poster src={`https://image.tmdb.org/t/p/w500${film.poster_path}`} alt="poster" />
         <DetailsCard>
-          <FilmTitle></FilmTitle>
-          <Datas>User Score:</Datas>
+          <FilmTitle>
+            {film.original_title} ({film.release_date.slice(0, 4)})
+          </FilmTitle>
+          <Datas>User Score: {film.vote_average} </Datas>
           <DatasTitle>Overview</DatasTitle>
-          <Datas></Datas>
+          <Datas>{film.overview}</Datas>
           <DatasTitle>Genres</DatasTitle>
           <Datas>{genres}</Datas>
         </DetailsCard>
       </FilmCard>
+
       <AddTitle>Additional information</AddTitle>
       <AddList>
         <AddItem>
-          <LinkStyle to={`/movies/${film.id}/cast`} state={location.state}></LinkStyle>
+          <LinkStyle to={`/movies/${film.id}/cast`} state={location.state}>
+            Cast
+          </LinkStyle>
         </AddItem>
         <AddItem>
-          <LinkStyle to={`/movies/${film.id}/reviews`} state={location.state}></LinkStyle>
+          <LinkStyle to={`/movies/${film.id}/reviews`} state={location.state}>
+            Reviews
+          </LinkStyle>
         </AddItem>
       </AddList>
     </>

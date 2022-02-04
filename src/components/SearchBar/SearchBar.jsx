@@ -11,6 +11,7 @@ export default function SearchBar({ onSubmit }) {
 
   const handleSubmit = e => {
     e.preventDefault();
+
     if (keyWord.trim() === '') {
       return;
     }
