@@ -1,7 +1,7 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { Outlet, useParams, useLocation } from 'react-router-dom';
 import BackButton from '../../components/BackButton/BackButton';
-import * as Api from '../../services/Api';
+import * as API from '../../services/Api';
 
 const FilmDataCard = lazy(() =>
   import('../../components/FilmDataCard/FilmDataCard' /* webpackChunkName: "film-data-card" */),
@@ -14,7 +14,7 @@ export default function FilmDetails() {
   const [genres, setGenres] = useState('');
 
   useEffect(() => {
-    Api.FetchFilmsDetails(filmId).then(setFilm);
+    API.FetchFilmsDetails(filmId).then(setFilm);
   }, [filmId]);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function FilmDetails() {
 
     let names = film.genres;
 
-    const string = names.map(name => name).join(', ');
+    const string = names.map(name => name.name).join(', ');
     setGenres(string);
   }, [film]);
 
