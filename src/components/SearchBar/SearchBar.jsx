@@ -4,6 +4,7 @@ import {
   SearchFormButtonLabel,
   SearchFormInput,
 } from './SearchBar.styled';
+
 import { useState } from 'react';
 
 export default function SearchBar({ onSubmit }) {

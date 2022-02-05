@@ -9,19 +9,17 @@ const NotFound = lazy(() =>
   import('./views/NoteFound/NoteFound.jsx' /* webpackChunkName: "not-found-view" */),
 );
 const Movies = lazy(() => import('./views/Movies/Movies' /* webpackChunkName: "movies-view" */));
-
 const FilmDetails = lazy(() =>
   import('./views/FilmDetails/FilmDetails' /* webpackChunkName: "film-details-view" */),
 );
-
 const Cast = lazy(() => import('./components/Cast/Cast' /* webpackChunkName: "cast" */));
 const Reviews = lazy(() => import('./components/Reviews/Reviews' /* webpackChunkName: "cast" */));
 
 export default function App() {
   return (
     <Container>
+      <Navigation />
       <Suspense fallback={<h1>Loading...</h1>}>
-        <Navigation />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/movies/:filmId" element={<FilmDetails />}>
