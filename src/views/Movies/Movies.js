@@ -2,8 +2,9 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import * as API from '../../services/Api';
+import MoviesList from '../../components/MoviesList/MoviesList';
 
-export default function Movies({ keyword }) {
+export default function MoviesView({ keyword }) {
   const [query, setQuery] = useState('');
   const [searched, setSearched] = useState([]);
   const location = useLocation();
@@ -36,10 +37,10 @@ export default function Movies({ keyword }) {
     setQuery(keyWord);
     navigate({ ...location, search: `query=${keyWord}` });
   };
-
   return (
     <>
-      <SearchBar onSubmit={handleFormSubmit}></SearchBar>
+      <SearchBar onSubmit={handleFormSubmit} />
+      {searched && <MoviesList movies={searched} />}
     </>
   );
 }

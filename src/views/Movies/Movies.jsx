@@ -10,7 +10,6 @@ export default function Movies() {
   const location = useLocation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-
   const search = searchParams.get('query');
 
   useEffect(() => {
