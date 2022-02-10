@@ -5,4 +5,6 @@ export const ContainerBox = styled.div`
   margin-right: auto;
   padding-left: 50px;
   padding-right: 50px;
+  padding-top: 30px;
+  //background-color: rgb(255, 255, 128);
 `;

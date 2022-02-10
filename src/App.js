@@ -18,8 +18,8 @@ const Reviews = lazy(() => import('./components/Reviews/Reviews' /* webpackChunk
 export default function App() {
   return (
     <Container>
-      <Navigation />
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<h3>Loading...</h3>}>
+        <Navigation />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/movies/:filmId" element={<FilmDetails />}>

@@ -8,7 +8,7 @@ export default function Cast() {
   const [cast, setCast] = useState([]);
 
   useEffect(() => {
-    API.FetchFilmsCredits(filmId).then(r => {
+    API.getMovieCast(filmId).then(r => {
       console.log(r.cast);
       setCast(r.cast);
     });

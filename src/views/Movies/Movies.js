@@ -18,7 +18,7 @@ export default function MoviesView({ keyword }) {
     if (query === '') {
       return;
     }
-    API.FetchSearchingFilms(query)
+    API.getMoviesByQuery(query)
       .then(r => r.results)
       .then(setSearched);
   }, [query]);
@@ -28,7 +28,7 @@ export default function MoviesView({ keyword }) {
     if (search === null) {
       return;
     }
-    API.FetchSearchingFilms(search)
+    API.getMoviesByQuery(search)
       .then(r => r.results)
       .then(setSearched);
   }, [search]);

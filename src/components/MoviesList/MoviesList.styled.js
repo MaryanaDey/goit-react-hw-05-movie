@@ -7,13 +7,13 @@ export const TrendMoviesList = styled.ol`
 `;
 export const MovieItem = styled.li`
   padding-bottom: 8px;
+  &:hover {
+    color: green;
+  }
   &::marker {
     color: #2a363b;
     font-size: 30px;
     font-weight: 500;
-  }
-  &:hover {
-    color: #dc6300;
   }
 `;
 export const LinkStyle = styled(Link)`
@@ -25,7 +25,4 @@ export const LinkStyle = styled(Link)`
   &:focus {
     color: #dc6300;
   }
-  /* &:visited {
-    color: #634688;
-  } */
 `;

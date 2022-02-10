@@ -8,7 +8,7 @@ export default function Reviews() {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    API.FetchFilmsReviews(filmId).then(r => {
+    API.getMovieReviews(filmId).then(r => {
       console.log(r.results);
       setReviews(r.results);
     });

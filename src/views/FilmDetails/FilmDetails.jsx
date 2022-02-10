@@ -14,7 +14,7 @@ export default function FilmDetails() {
   const [genres, setGenres] = useState('');
 
   useEffect(() => {
-    API.FetchFilmsDetails(filmId).then(setFilm);
+    API.getMovieById(filmId).then(setFilm);
   }, [filmId]);
 
   useEffect(() => {

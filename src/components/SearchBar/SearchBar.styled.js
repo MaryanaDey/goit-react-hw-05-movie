@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 export const SearchForm = styled.form`
   display: flex;
+  //justify-content: center;
   margin-top: 20px;
   margin-bottom: 32px;
-  /* margin-left: auto; */
   margin-right: auto;
   align-items: center;
   width: 100%;
   max-width: 600px;
-  background-color: #fff;
+  background-color: inherit;
   border-radius: 3px;
   overflow: hidden;
   -webkit-box-shadow: 0px 0px 30px 0px rgba(34, 60, 80, 0.2);
@@ -42,7 +42,6 @@ export const SearchFormButtonLabel = styled.span`
 `;
 export const SearchFormInput = styled.input`
   display: inline-block;
-  //   width: 100%;
   font: inherit;
   font-size: 20px;
   border: none;
